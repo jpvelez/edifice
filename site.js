@@ -58,16 +58,20 @@ $(function() {
     };
 
     // Set up map and layerswitcher.
+    // Iterate through layer-switcher list, building urls using layer anchor's data-layer attr, fetching tilejson
+    // object using url, and adding each tilejson to a layers hash, keyed by the layer div's id.
     $('#layer-switcher li').each(function(i, el) {
         wax.tilejson(tileUrl($('a', el).attr('data-layer')), function(tilejson) {
             tilejson.handle = $(el).attr('id');
             layers[tilejson.handle] = tilejson;
-            // As soon as first map is loaded, build it and
-            // attach updateMap handler to all layer controls.
+            // As soon as first map is loaded - when the first layer-switcher element's tilejson is added to layers hash -
+            // build it and attach updateMap handler to all layer controls, so the map is updated when controls are clicked.
             if (i == 0) {
+                // The buildMap function doesn't return a map, but the an updateMap function. It sets the map when
+                // called below, and when other layer controls are clicked.
                 var updateMap = buildMap(tilejson);
                 $('#layer-switcher li .title').click(function() {;
-                    updateMap(layers[$(this).parent().attr('id')]);
+                    updateMap(layers[$(this).parent().attr('id')]); // Pass tilejson of clicked control to updateMap
                     return false;
                 });
             }
