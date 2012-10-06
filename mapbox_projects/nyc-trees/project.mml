@@ -1,0 +1,120 @@
+{
+  "bounds": [
+    -74.0242,
+    40.7005,
+    -73.9026,
+    40.8762
+  ],
+  "center": [
+    -73.9792,
+    40.7537,
+    13
+  ],
+  "format": "png",
+  "interactivity": {
+    "layer": "staten",
+    "template_teaser": "<b>Tree ID:</b> {{{treeid}}} <br />\n<b>Address:</b> {{{buildingnu}}} {{{buildingst}}} <br />\n<b>Diameter (DBH):</b> {{{diameter}}} <br />\n<b>Borough:</b> {{{borough}}}nd ",
+    "fields": [
+      "treeid",
+      "buildingnu",
+      "buildingst",
+      "diameter",
+      "borough",
+      "gid"
+    ]
+  },
+  "minzoom": 9,
+  "maxzoom": 17,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "id": "countries",
+      "name": "countries",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "geometry": "polygon",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip",
+        "type": "shape"
+      }
+    },
+    {
+      "geometry": "point",
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select\ngid,\nthe_geom,\ntreeid,\ndiameter,\nbuildingnu,\nbuildingst,\nborough\nfrom manhattan) as data",
+        "extent": "",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "host": "localhost",
+        "dbname": "nyc",
+        "user": "postgres"
+      },
+      "id": "manhattan",
+      "class": "trees",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "name": "manhattan"
+    },
+    {
+      "geometry": "point",
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select\ngid,\nthe_geom,\ntreeid,\ncast(diameter as numeric) as diameter,\nbuildingnu,\nbuildingst,\nborough\nfrom queens) as data",
+        "extent": "",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "host": "localhost",
+        "dbname": "nyc",
+        "user": "postgres"
+      },
+      "id": "queens",
+      "class": "trees",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "name": "queens"
+    },
+    {
+      "geometry": "point",
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select\ngid,\nthe_geom,\ntreeid,\ndiameter,\nbuildingnu,\nbuildingst,\nborough\nfrom bronx) as data",
+        "extent": "",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "host": "localhost",
+        "dbname": "nyc",
+        "user": "postgres"
+      },
+      "id": "bronx",
+      "class": "trees",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "name": "bronx"
+    },
+    {
+      "geometry": "point",
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select\ngid,\nthe_geom,\ntreeid,\ndiameter,\nbuildingnu,\nbuildingst,\nborough\nfrom brooklyn) as data",
+        "extent": "",
+        "key_field": "gid",
+        "geometry_field": "the_geom",
+        "host": "localhost",
+        "dbname": "nyc",
+        "user": "postgres"
+      },
+      "id": "brooklyn",
+      "class": "trees",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "name": "brooklyn"
+    }
+  ],
+  "name": "",
+  "description": "",
+  "legend": "",
+  "attribution": ""
+}
