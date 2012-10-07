@@ -17,7 +17,7 @@
     <div id='header' class='gradient'>
       <div class='inner'>
         <span class='green-data'>Edifice</span>
-        <h6 class='description'>A showcase of <a href='http://www.encyclopedia.chicagohistory.org/pages/181.html'>Chicago's built environment</a> for <a href='http://www.cnt.org/events/reinventing-chicago/hackathon'>#reinventchi</a> by <a href='http://mapbox.com'>Cory & Juan</a>.</h6>
+        <h6 class='description'>A showcase of <a href='http://www.encyclopedia.chicagohistory.org/pages/181.html'>Chicago's built environment</a> for <a href='http://www.cnt.org/events/reinventing-chicago/hackathon'>#reinventchi</a> by <a href='http://opencityapps.org'>Cory & Juan</a>.</h6>
         <a class='reinventgreen' href='http://hackerleague.org/hackathons/reinvent-green'>#reinventchi</a>
       </div>
     </div>
@@ -26,33 +26,29 @@
         <div id='layer-switcher'>
           <ul>
             <li id='buildings-footprints'>
-              <a class='title' data-layer='jpvelez.buildings-areas' href='#'>Building areas</a>
+              <a class='title' data-layer='jpvelez.buildings' href='#'>Buildings</a>
               <div class='description'><span class='arrow'>&nbsp;</span><a href="https://data.cityofchicago.org/Buildings/Building-Footprints/w2v3-isjw">Every building</a> in Chicago, colored by its footprint area.</div>
             </li>
             <li id='street-trees'>
               <a class='title' data-layer='lxbarth.map-e1zsyom9,jpvelez.new_demo_permits' href='#'>Demolitions</a>
-              <div class='description'><span class='arrow'>&nbsp;</span>All <a href="https://data.cityofchicago.org/Buildings/Demolition-Permits-2012/zkgv-8cwu">demolished buildings</a> since 2006.</div>
+              <div class='description'><span class='arrow'>&nbsp;</span>All <a href="https://data.cityofchicago.org/Buildings/Demolition-Permits-2012/zkgv-8cwu">buildings demolished </a> since 2006.</div>
             </li>
             <li id='parks'>
-              <a class='title' data-layer='lxbarth.map-e1zsyom9,jpvelez.new_demo_permits' href='#'>Parks</a>
-              <div class='description'><span class='arrow'>&nbsp;</span>New York City Department of Parks &amp; Recreation parks (<a href="https://nycopendata.socrata.com/Facilities-and-Structures/Map-of-Parks/jc79-4imn/about">Source</a>).</div>
+              <a class='title' data-layer='jpvelez.new_const_permits' href='#'>Violations</a>
+              <div class='description'><span class='arrow'>&nbsp;</span>Every <a href="https://data.cityofchicago.org/Buildings/Building-Violations/22u3-xenr">building violation</a> issued by the City of Chicago since 2006.</div>
             </li>
             <li id='cool-roofs'>
-              <a class='title' data-layer='lxbarth.map-wpqmws96' href='#'>Cool roof buildings</a>
-              <div class='description'><span class='arrow'>&nbsp;</span>There are over 200 cool roof buildings with a total surface of over a million square feet in New York City. This newly opened dataset identifies them by street address and geo location (<a href="https://nycopendata.socrata.com/Environmental-Sustainability/NYC-Cool-Roofs-Buildings/uuxn-wzxe">Source</a>).</div>
+              <a class='title' data-layer='lxbarth.map-wpqmws96' href='#'>Construction</a>
+              <div class='description'><span class='arrow'>&nbsp;</span>Total construction spending by census block group.</div>
             </li>
             <li id='energy'>
-              <a class='title' data-layer='lxbarth.map-v9o1vc83' href='#'>Energy consumption</a>
-              <div class='description'><span class='arrow'>&nbsp;</span>Energy consumption by ZIP code in kWh. Blue is lower consumption, magenta higher consumption (<a href="https://nycopendata.socrata.com/Environmental-Sustainability/Electric-Consumption-by-ZIP-Code-2010/74cu-ncm4">Source</a>)</div>
-            </li>
-            <li id='greenstreets'>
-              <a class='title' data-layer='villeda.map-8lrdm572' href='#'>Green streets</a>
-              <div class='description'><span class='arrow'>&nbsp;</span>Small planted areas that are maintained as <a href="http://www.nycgovparks.org/trees">Greenstreets</a> (<a href="https://nycopendata.socrata.com/Environmental-Sustainability/Greenstreets/p23h-ci72">Source</a>).</div>
+              <a class='title' data-layer='lxbarth.map-v9o1vc83' href='#'>Land Use</a>
+              <div class='description'><span class='arrow'>&nbsp;</span>What's going on inside every building, according to the <a href="http://www.cmap.illinois.gov/land-use-inventory">Chicago Metropolitain Agency for Planning</a>.</div>
             </li>
           </ul>
         </div>
         <div class='notes'>
-        All data from <a href='https://data.cityofchicago.org/'>Chicago's Open Data portal</a> and <a href='http://openstreetmap.org'>OpenStreetMap</a>. Maps designed with <a href='http://mapbox.com/tilemill/'>TileMill</a>, site template by <a href='http://mapbox.com/reinventgreen/'>MapBox</a>. Code is on <a href='https://github.com/mapbox/reinventgreen'>GitHub</a>. 
+        All data from <a href='https://data.cityofchicago.org/'>Chicago's Open Data portal</a> and <a href='http://openstreetmap.org'>OpenStreetMap</a>. Maps designed with <a href='http://mapbox.com/tilemill/'>TileMill</a>, site template by <a href='http://mapbox.com/reinventgreen/'>MapBox</a>. Code is on <a href='https://github.com/jpvelez/reinventchi'>GitHub</a>. 
         </div>
       </div>
     </div>
