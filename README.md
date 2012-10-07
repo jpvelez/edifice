@@ -1,60 +1,39 @@
-Reinvent Green Maps
+Edifice Maps
 ===================
 
-[TileMill](http://mapbox.com/tilemill/) projects for maps we have rendered out in prep for the Reinvent Green Hackathon June 30/July 1st in New York City.
+[TileMill](http://mapbox.com/tilemill/) projects for maps we designed for the Reinventing Chicago Hackathon October 6-8 in Chicago.
 
-[For more background, head over to our blog](http://mapbox.com/blog/reinvent-green).
+The maps were made using data from Edifice, a database of Chicago's built environment we're assembling.
 
-## Cool roof buildings
+We stole the [site template](http://mapbox.com/reinventgreen/) and map styles from the wonderful folks at [Mapbox.](http://mapbox.com/).
 
-`coolroofs/`
+## Buildings areas
 
-There are over 200 cool roof buildings in New York City. This newly opened dataset identifies them by street address and geo location ([Source](https://nycopendata.socrata.com/Environmental-Sustainability/NYC-Cool-Roofs-Buildings/uuxn-wzxe)).
+`building_areas/`
 
-## Street trees
+Every building in Chicago, colored by its footprint area.
 
-`/nyc-trees`
+## Building demolitions
 
-A census of street trees by borough yielded datasets with a total of 623939 trees ([Source](https://nycopendata.socrata.com/browse?q=street%20tree%20census&sortBy=relevance)). This map contains all boroughs except Staten Island.
+`demolitions/`
 
-## Green streets
+All buildings demolished since 2006.
 
-`nyc-greenstreets`
+## Building violations
 
-Small planted areas that are maintained as [Greenstreets](http://www.nycgovparks.org/trees) ([Source](https://nycopendata.socrata.com/Environmental-Sustainability/Greenstreets/p23h-ci72)).
+`violations/`
 
+Every building violation issued by the City of Chicago since 2006.
 
-## Building perimeter outlines
+## Construction Spending
 
-`/nyc-buildings`
+`construction_spending/`
 
-Rich dataset containing over one million building footprints of New York City. Here we've colored them by footprint area ([Source](https://nycopendata.socrata.com/Facilities-and-Structures/Building-Perimeter-Outlines/r7fd-yd5e)).
+Total construction spending by census block group.
 
-NOTE: this is powered by a postgis data, since the data are so heavy. We can give db dumps tomorrow morning - just ping me at [@ian_villeda](https://twitter.com/ian_villeda)
+## Land use
 
-## School zones
+`landuse/`
 
-`nyc-school-zones`
+NOT COMPLETE: Every building colored by its landuse.
 
-Elementary and middle school zones of New York City ([Source](https://nycopendata.socrata.com/Education/School-Zones-2011-2012/dqkt-8x6u)).
-
-NOTE: This layer can generate both middle and elementary school zone maps. To toggle between them, just uncomment the layer you want to see, and comment out the layer you don't want to see, like this: 
-
-```carto
-/*
-#nycmiddleschoolzones {
-  line-color:darken(#00FF7F,20);
-  line-width:1;
-  polygon-opacity:.5;
-  polygon-fill:#00FF7F;
-}
-
-*/
-
-#nycelementaryschoolz {
-  line-color:darken(#007FFF,20);
-  line-width:1;
-  polygon-opacity:.5;
-  polygon-fill:#007FFF;
-}
-``` 
