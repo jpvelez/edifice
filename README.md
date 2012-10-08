@@ -35,5 +35,31 @@ Total construction spending by census block group.
 
 `landuse/`
 
-NOT COMPLETE: Every building colored by its landuse.
+Every building colored by its landuse.
+NOT COMPLETE: sql in the directory, table in psql.
+
+## Renovations
+
+`new_renov_permits/`
+
+Every building with renovation since 2006, with a count of renovation and data for most recent renovation.
+NOT COMPLETE: SQL is in the directory, data in postgres, no tilemill yet.
+
+## Analysis
+
+`analysis/`
+
+Datasets for analysis and visualization. Currently a csv file of building counts by decade of construction, for a histogram.
+
+## Map website
+
+`index.html`, `site.css`, `site.js`
+
+Simple site to showcase tilemill maps. All the mapping js is in site.js, libraries are in `javascripts/` dir.
+
+## Edifice dec
+
+`splash.html`, `200wacker.json`
+
+Slides for Edifice presentation, splash page and building example.
 
