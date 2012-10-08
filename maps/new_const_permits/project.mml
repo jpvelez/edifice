@@ -1,0 +1,70 @@
+{
+  "bounds": [
+    -88.0197,
+    41.6,
+    -87.3386,
+    42.0941
+  ],
+  "center": [
+    -87.664,
+    41.8803,
+    11
+  ],
+  "format": "png",
+  "interactivity": {
+    "layer": "new-violations",
+    "template_teaser": "<b>{{{count}}} violations</b> since 2006<br><br>\n\n<b>Most recent violation</b>: {{{v_desc}}}<br>\n<b>Type of inspection</b>: {{{insp_category}}}<br>\n<b>Result</b>: {{{insp_status}}}<br>\n",
+    "template_full": "",
+    "fields": [
+      "count",
+      "v_desc",
+      "insp_category",
+      "insp_status",
+      "bldg_gid"
+    ]
+  },
+  "minzoom": 11,
+  "maxzoom": 17,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "geometry": "point",
+      "extent": [
+        -87.8688711355112,
+        41.6452453847191,
+        -87.5247511691793,
+        42.0229999884811
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "new_violations",
+        "key_field": "bldg_gid",
+        "geometry_field": "centroid",
+        "extent_cache": "auto",
+        "extent": "-87.8688711355112,41.6452453847191,-87.5247511691793,42.0229999884811",
+        "host": "localhost",
+        "port": "5432",
+        "dbname": "reinventchi_buildings",
+        "user": "jpv",
+        "id": "new-violations",
+        "project": "new_const_permits",
+        "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+      },
+      "id": "new-violations",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "new-violations"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "name": "Building Violations",
+  "description": "Every violation issued by the City of Chicago since 2006.",
+  "legend": "",
+  "attribution": "City of Chicago - Dept. of Buildings"
+}
