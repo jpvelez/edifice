@@ -16,6 +16,17 @@ Our tilemill projects are in `maps/`:
 
 Every building in Chicago, colored by its footprint area.
 
+### addresses.sql
+Flat PostgreSQL data dump of building IDs (bldg`_`gid) with their address.
+
+`data/`
+
+Due to earlier problems with a dump/reload of PostGIS database we had to use flat CSV files. This can be restored into PostGIS with:
+
+`CREATE TABLE buildings_tilemill (bldg_gid smallint, the_geom geometry, lat double precision, lon double precision, year_built smallint, sqft int, prop_value money, zoning varchar(10), landuse varchar(255));
+\copy buildings_tilemill FROM '/<path-to-csv-file>' WITH CSV HEADER;`
+
+
 ## Building demolitions
 
 `demolitions/`
@@ -34,12 +45,22 @@ Every building violation issued by the City of Chicago since 2006.
 
 Total construction spending by census block group.
 
+### census`_`block`_`groups.sql
+Flat PostGIS data dump of Census block groups in Chicago
+
+### new`_`const`_`heatmap
+Custom PostGIS dump of new construction spending heatmap in chicago. Should be able to restore with pg`_`restore.
+
 ## Land use
 
 `landuse/`
 
 Every building colored by its landuse.
 NOT COMPLETE: sql in the directory, table in psql.
+
+### landuse.sql ###
+Flat PostgreSQL data dump of building ids (bldg`_`gid) with a short description (shortdesc) and label (tilemill`_`display) of its land use. Data from the [Chicago Metropolitan Agency for Planning](http://cmap.illinois.gov/land-use-inventory)
+
 
 ## Renovations
 
